@@ -1,0 +1,9 @@
+---
+- name: My Test Playbook
+  hosts: webservers
+  become: yes
+  tasks:
+  - name: installing multiple packages
+    yum:
+      name: ['git', 'which', 'mysql', 'tree', 'wget']
+      state: present

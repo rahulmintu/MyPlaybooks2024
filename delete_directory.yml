@@ -1,0 +1,9 @@
+---
+- name: My Test playbook
+  hosts: webservers
+  become: true
+  tasks:
+  - name: Deleting the Directory
+    file:
+      path: /home/ansadmin/dir1
+      state: absent

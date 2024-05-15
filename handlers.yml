@@ -1,0 +1,17 @@
+---
+- name: My Test Playbook
+  hosts: webservers
+  become: true
+  tasks:
+  - name: Install Httpd
+    yum:
+      name: httpd
+      state: present
+    notify: Start Httpd
+
+  handlers:
+  - name: Start Httpd
+    service:
+      name: httpd
+      state: started
+
